@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+        <!--dubbo的服务消费者-->
+        <dubbo:application name="dubbo-customer" ></dubbo:application>
+        <!--zookeeper注册中心订阅服务-->
+        <dubbo:registry protocol="zookeeper" address="192.168.25.128" port="2181"></dubbo:registry>
+        <!--dubbo注册扫描是action创建对象且调用接口-->
+        <dubbo:annotation package="com.itheima.dubbo.controller" ></dubbo:annotation>
+</beans>
